@@ -39,6 +39,30 @@ public class Job {
         return Objects.hash(getId());
     }
 
+    @Override
+    public String toString() {
+        String str = "\n";
+        if(allFieldsAreNull()) {
+            str += "OOPS! This job does not seem to exist.";
+        } else {
+            str += "ID: " + getId();
+            str += "Name: " + name == null || name == "" ? "Data not available" : name;
+            str += "Employer: " + employer == null || employer.getValue() == "" ? "Data not available" : employer.getValue();
+            str += "Location: " + location == null || location.getValue() == "" ? "Data not available" : location.getValue();
+            str += "Position Type: " + positionType == null || positionType.getValue() == "" ? "Data not available" : positionType.getValue();
+            str += "Core Competency: " + coreCompetency == null || coreCompetency.getValue() == "" ? "Data not available" : coreCompetency.getValue();
+        }
+        return str + "\n";
+    }
+
+    private boolean allFieldsAreNull() {
+        return  name == null
+                && employer == null
+                && location == null
+                && positionType == null
+                && coreCompetency == null;
+    }
+
     public int getId() {
         return this.id;
     }
