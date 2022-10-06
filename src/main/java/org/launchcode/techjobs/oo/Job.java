@@ -43,16 +43,16 @@ public class Job {
     public String toString() {
         String str = "\n";
         if(allFieldsAreNull()) {
-            str += "OOPS! This job does not seem to exist.";
+            str += "OOPS! This job does not seem to exist.\n";
         } else {
-            str += "ID: " + getId();
-            str += "Name: " + name == null || name == "" ? "Data not available" : name;
-            str += "Employer: " + employer == null || employer.getValue() == "" ? "Data not available" : employer.getValue();
-            str += "Location: " + location == null || location.getValue() == "" ? "Data not available" : location.getValue();
-            str += "Position Type: " + positionType == null || positionType.getValue() == "" ? "Data not available" : positionType.getValue();
-            str += "Core Competency: " + coreCompetency == null || coreCompetency.getValue() == "" ? "Data not available" : coreCompetency.getValue();
+            str += "ID: " + getId() + "\n";
+            str += "Name: " + (name == null || name == "" ? "Data not available" : name) + "\n";
+            str += "Employer: " + (employer == null || employer.getValue() == "" ? "Data not available" : employer.getValue()) + "\n";
+            str += "Location: " + (location == null || location.getValue() == "" ? "Data not available" : location.getValue()) + "\n";
+            str += "Position Type: " + (positionType == null || positionType.getValue() == "" ? "Data not available" : positionType.getValue()) + "\n";
+            str += "Core Competency: " + (coreCompetency == null || coreCompetency.getValue() == "" ? "Data not available" : coreCompetency.getValue()) + "\n";
         }
-        return str + "\n";
+        return str;
     }
 
     private boolean allFieldsAreNull() {
